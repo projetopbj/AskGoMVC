@@ -23,7 +23,7 @@ public abstract class DAO<T, I extends Serializable> implements IDAO<T, I> {
 	}
 
 	public void remove(T entity) {
-		manager.remove(entity);
+		manager.remove(manager.contains(entity) ? entity : manager.merge(entity));
 	}
 
 	public T getById(Class<T> classe, I pk) {

@@ -13,7 +13,7 @@ import javax.persistence.ManyToMany;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-public class Usuario extends Entities {
+public class Usuario{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -30,6 +30,11 @@ public class Usuario extends Entities {
 	@ManyToMany(mappedBy = "enqueteUsuarios")
 	private List<Enquete> enquetes = new ArrayList<>();
 	
+	public Usuario(Long id) {
+		this.id = id;
+	}
+	public Usuario() {
+	}
 	public List<Enquete> getEnquetes() {
 		return enquetes;
 	}

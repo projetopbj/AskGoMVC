@@ -3,15 +3,14 @@ package br.laab.askgomvc.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.laab.askgomvc.entities.Enquete;
 import br.laab.askgomvc.dao.Imp.EnqueteDAO;
+import br.laab.askgomvc.entities.Enquete;
 
-@Service
-@Transactional
+
 public class EnqueteService {
 	
 	@Autowired
