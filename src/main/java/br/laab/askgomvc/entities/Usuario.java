@@ -27,7 +27,7 @@ public class Usuario {
 	private String email;
 	private String senha;
 	
-	@ManyToMany(mappedBy = "usuarios")
+	@ManyToMany(mappedBy = "enqueteUsuarios")
 	private List<Enquete> enquetes = new ArrayList<>();
 	
 	public List<Enquete> getEnquetes() {

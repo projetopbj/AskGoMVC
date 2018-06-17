@@ -19,7 +19,7 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter{
 	       if(session.getAttribute("usuario") != null) {  
 	         return true; 
 	       } 
-	       response.sendRedirect("/spring5/loginForm"); 
+	       response.sendRedirect("/AskGO/loginForm"); 
 	       return false; 
 	   } 
 	}

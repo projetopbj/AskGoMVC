@@ -19,7 +19,7 @@ import br.laab.askgomvc.interceptors.AutorizadorInterceptor;
  
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {"controllers", "daos", "services"})
+@ComponentScan(basePackages = {"br.laab.askgomvc"})
 @EnableTransactionManagement
 public class WebMvcConfig implements WebMvcConfigurer {
  
