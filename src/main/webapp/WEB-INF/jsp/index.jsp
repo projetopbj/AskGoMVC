@@ -17,10 +17,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <link href="<c:url value='resources/css/theme.css' />" rel="stylesheet">
   <script src="<c:url value='resources/js/bootstrap.min.js'/>"></script>
-  <title>Login - AskGo</title>
+  <title>Principal - AskGo</title>
 </head>
 <body>
-  <c:url var="url" value="/logar" />
+  <c:url var="url" value="/cardapio/form" />
   <nav class="navbar navbar-expand-md bg-primary navbar-dark">
     <div class="container">
       <a class="navbar-brand" href="#">AskGO
@@ -30,8 +30,24 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
+        <ul class="navbar-nav">
+          <a class="btn btn-primary" href="#">Agenda
+            <br>
+          </a>
+          <a class="btn btn-primary" href="#">Contatos
+            <br>
+          </a>
+          <div class="btn-group">
+            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> Notificações</button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Sem novas notificações
+                <br>
+              </a>
+            </div>
+          </div>
+        </ul>
         <a class="btn navbar-btn ml-2 text-white btn-secondary">
-          <i class="fa d-inline fa-lg fa-question-circle-o"></i>&nbsp; Sobre
+          <i class="fa d-inline fa-lg fa-user-circle-o"></i>&nbsp;&nbsp;Perfil
           <br>
         </a>
       </div>
@@ -40,23 +56,43 @@
   <div class="py-5">
     <div class="container">
       <div class="row">
-        <div class="col-md-3"> </div>
-        <div class="col-md-6">
-          <div class="card text-white p-5 bg-primary">
-            <div class="card-body">
-              <h1 class="mb-4">Login</h1>
-              <form:form method="post" action="${url}" modelAttribute="usuario">
-                <div class="form-group">
-                  <label>Email</label>
-                  <form:input path="email" type="email" cssClass="form-control" placeholder="Seu email"/> </div>
-                <div class="form-group">
-                  <label>Senha</label>
-                  <form:input path="senha" type="password" cssClass="form-control" placeholder="Senha"/> <form:errors path="senha" cssClass="error" /> </div>
-                <input type='submit' value='Login' type="submit" cssClass="btn btn-secondary"/>
-              </form:form>
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header bg-primary"> Enquetes
+              <br>
             </div>
+            <div class="card-body">
+              <div class="list-group">
+				<table>
+					<tr>
+						<td>Titulo</td>
+						<td>Descrição</td>
+						<td>Data de Início</td>
+						<td>Ações</td>
+					</tr>
+					
+					<c:forEach var="enquete" items="${enquetes}" >
+						
+					<tr>
+						<td>${enquete.titulo}</td>
+						<td>${enquete.descricao}</td>
+				        <td><fmt:formatDate pattern="dd/MM/yyyy" value="${enquete.dataInicio}"/></td>
+						<td>
+							<a href='<c:url value="/cardapio/${enquete.id}/remove" />'>remover</a>
+							<a href='<c:url value="/cardapio/${enquete.id}/form" />'>editar</a>
+						</td>
+					</tr>
+					</c:forEach>
+			
+				</table>
+              </div>
+            </div>
+            <a class="btn btn-success" href="#">Criar nova enquete</a>
           </div>
         </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12"></div>
       </div>
     </div>
   </div>

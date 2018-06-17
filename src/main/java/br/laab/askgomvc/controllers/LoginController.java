@@ -40,7 +40,7 @@ public class LoginController {
 			return  "login/login";
 		}
 		sessao.setAttribute("usuario", usuario);
-		return "redirect:/teste/hello";
+		return "redirect:/index";
 	}
 	
 	

@@ -13,7 +13,7 @@ import javax.persistence.ManyToMany;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-public class Usuario {
+public class Usuario extends Entities {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)

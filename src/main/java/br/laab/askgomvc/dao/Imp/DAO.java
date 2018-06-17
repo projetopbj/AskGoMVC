@@ -14,24 +14,19 @@ public abstract class DAO<T, I extends Serializable> implements IDAO<T, I> {
 	@PersistenceContext
 	protected EntityManager manager;
 	
-	@Override
-	public T save(T entity) {
-
-		T saved = null;
-		
-		saved = manager.merge(entity);
-		return saved;
+	public void insert(T entity) {
+		manager.persist(entity);
+	}
+	
+	public void update(T entity) {
+		manager.merge(entity);
 	}
 
-	@Override
 	public void remove(T entity) {
-	
 		manager.remove(entity);
 	}
 
-	@Override
 	public T getById(Class<T> classe, I pk) {
-
 		try {
 			return manager.find(classe, pk);
 		} catch (NoResultException e) {
@@ -40,12 +35,7 @@ public abstract class DAO<T, I extends Serializable> implements IDAO<T, I> {
 
 	}
 
-	@SuppressWarnings("unchecked")
-	@Override
 	public List<T> getAll(Class<T> classe) {
-
 		return manager.createQuery("select o from " + classe.getSimpleName() + " o").getResultList();
 	}
-
-
 }

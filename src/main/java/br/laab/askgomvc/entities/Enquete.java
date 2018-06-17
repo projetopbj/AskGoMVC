@@ -21,7 +21,7 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "enquete")
-public class Enquete {
+public class Enquete extends Entities {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)

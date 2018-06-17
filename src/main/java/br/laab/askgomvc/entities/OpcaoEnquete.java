@@ -17,7 +17,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-public class OpcaoEnquete {
+public class OpcaoEnquete extends Entities {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)	

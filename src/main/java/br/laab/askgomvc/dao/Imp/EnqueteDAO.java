@@ -1,5 +1,6 @@
 package br.laab.askgomvc.dao.Imp;
 
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import br.laab.askgomvc.dao.IEnqueteDAO;
 import br.laab.askgomvc.entities.Enquete;
