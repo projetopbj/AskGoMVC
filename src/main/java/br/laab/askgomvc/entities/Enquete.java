@@ -49,9 +49,17 @@ public class Enquete{
 	@ManyToMany(cascade = { CascadeType.ALL })
     @JoinTable(name = "enquete_usuario",
     joinColumns = @JoinColumn(name = "enquete_id"),
-    inverseJoinColumns = @JoinColumn(name = "usuario_id")
-    		)
+    inverseJoinColumns = @JoinColumn(name = "usuario_id"))
+	
 	private List<Usuario> enqueteUsuarios;
+	
+	public Enquete () {
+		
+	}
+	
+	public Enquete (long id) {
+		this.id = id;
+	}
 	
 	public Long getId() {
 		return id;

@@ -62,7 +62,7 @@
 										placeholder="Senha" />
 									<form:errors path="senha" class="error" />
 								</div>
-								<input type='submit' value='Salvar' type="submit" cssClass="btn btn-secondary" />
+								<input type='submit' value='Salvar' cssClass="btn btn-secondary" />
 							</form:form>
 						</div>
 					</div>
