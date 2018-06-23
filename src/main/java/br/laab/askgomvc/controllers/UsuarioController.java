@@ -2,6 +2,7 @@ package br.laab.askgomvc.controllers;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,9 +32,9 @@ public class UsuarioController {
 		return "/usuario/listar";
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, value="{id}/perfil")
-	public String perfil(@PathVariable Long id, ModelMap map){
-		Usuario user = usuarioService.buscarPorId(id);
+	@RequestMapping(method=RequestMethod.GET, value="/perfil")
+	public String perfil( ModelMap map, HttpServletRequest request){
+		Usuario user = (Usuario)request.getSession().getAttribute("usuario");
 		map.addAttribute("usuario", user);
 		return "/usuario/perfil";
 	}
