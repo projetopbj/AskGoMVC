@@ -31,8 +31,12 @@
 		</button>
 		<div class="collapse navbar-collapse text-center justify-content-end"
 			id="navbar2SupportedContent">
+			<a class="btn navbar-btn ml-2 text-white btn-secondary" href="/AskGO/enquete/listar">Enquetes<br>
+			</a>
+			<a class="btn navbar-btn ml-2 text-white btn-secondary" href="/AskGO/usuario/listar">Usuários<br>
+			</a>
 			<a class="btn navbar-btn ml-2 text-white btn-secondary"> <i
-				class="fa d-inline fa-lg fa-question-circle-o"></i>&nbsp; Sobre <br>
+				class="fa d-inline fa-lg fa-user-circle-o"></i>&nbsp;&nbsp;Perfil <br>
 			</a>
 		</div>
 	</div>

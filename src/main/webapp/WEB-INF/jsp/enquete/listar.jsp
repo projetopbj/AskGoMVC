@@ -16,10 +16,9 @@
 	type="text/css">
 <link href="<c:url value='/resources/css/theme.css' />" rel="stylesheet">
 <script src="<c:url value='/resources/js/bootstrap.min.js'/>"></script>
-<title>Cadastrar Enquete - AskGo</title>
+<title>Enquetes - AskGo</title>
 </head>
 <body>
-	<c:url var="url" value="/enquete/save" />
 	<nav class="navbar navbar-expand-md bg-primary navbar-dark">
 	<div class="container">
 		<a class="navbar-brand" href="#">AskGO <br>
@@ -44,48 +43,61 @@
 	</nav>
 	<div class="py-5">
 		<div class="container">
+		
+			<div class="row">
+        		<div class="col-md-12">
+          			<div class="card">
+          				<div class="card-header bg-primary">
+							Filtrar <br>
+						</div>
+						<div class="card-body">
+	          				<c:url var="urlFiltro" value="/enquete/filtrar" />
+							<form:form method="get" action="${urlFiltro}" modelAttribute="filtro">
+							    Título:<form:input path="titulo" />
+							    Descrição:<form:input path="descricao" />
+								<input type="submit" value="Pesquisar">
+							</form:form>
+						</div>
+          			</div>
+          			
+          			<br>
+          			<div class="card">
+		          			<c:url var="url" value="/enquete/form" />
+							<a class="btn btn-success" href="${url}">Adicionar Enquete</a>
+					</div>
+					<br>
+					
+          		</div>
+          	</div>
 			<div class="row">
 				<div class="col-md-12">
 					<div class="card">
 						<div class="card-header bg-primary">
-							Cadastrar Enquete<br>
-						</div>
-						<div class="card-body">
-							<form:form method="post" action="${url}" modelAttribute="enquete">
-								<div class="form-group">
-									<label>Título</label>
-									<form:input type="text" path="titulo" class="form-control"
-										id="inlineFormInput" placeholder="Título da Enquete" />
-								</div>
-								<div class="form-group">
-									<label for="exampleInputEmail1">Descrição</label>
-									<form:textarea type="text" path="descricao" class="form-control"
-										id="inlineFormInput" placeholder="Descrição da Enquete" />
-								</div>
-								<div class="form-group">
-									<label>Data Limite para Votação</label> 
-									<form:input type="date" path="dataFim" class="form-control"
-										id="inlineFormInput" placeholder="Data final de votação para Enquete" />
-								</div>
-								<div class="form-group form-row my-3">
-									<label class="col-sm-2 col-form-label">Opção&nbsp;</label>
-									<div class="col-sm-10">
-										<input type="text" class="form-control" id="inlineFormInput"
-											placeholder="Opção da enquete">
-									</div>
-								</div>
-								<a href="#" class="btn btn-outline-primary btn-block">Adicionar
-									outra opção <br>
-								</a>
-								<br>
-								<input type='submit' value='Salvar' cssClass="btn btn-secondary" />
-							</form:form>
+							Enquetes Cadastradas <br>
 						</div>
 					</div>
+					<table class="table">
+						<tbody>
+							<c:forEach var="enquete" items="${enquetes}">
+								<tr>
+									<td><i class="d-block  fa fa-2x fa-user-circle"></i></td>
+									<td class="w-75">${enquete.titulo}</td>
+									<td class="w-75">${enquete.descricao}</td>
+									<td class="btn-group"> <a
+										href="<c:url value="/enquete/${enquete.id}/form" />"
+										class="btn btn-outline-primary">Editar</a> <a
+										href="<c:url value="/enquete/${enquete.id}/remove" />"
+										class="btn btn-outline-primary">Remover</a></td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>          	
+          	
+          	
 	<script
 		src='<c:url  value="https://code.jquery.com/jquery-3.2.1.slim.min.js" />'
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
