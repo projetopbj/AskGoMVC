@@ -66,7 +66,7 @@
           			<br>
           			<div class="card">
 		          			<c:url var="url" value="/usuario/form" />
-							<a class="btn btn-success" href="${url}">Adicionar Usuário</a>
+							<a class="btn btn-success" href="${url}">Cadastrar Usuário</a>
 					</div>
 					<br>
 					
