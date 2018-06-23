@@ -52,6 +52,7 @@
 						</div>
 						<div class="card-body">
 							<form:form method="post" action="${url}" modelAttribute="usuario">
+								<form:hidden path="id"/>
 								<div class="form-group form-row">
 									<label class="col-sm-2 col-form-label">Nome</label>
 									<div class="col-sm-10">

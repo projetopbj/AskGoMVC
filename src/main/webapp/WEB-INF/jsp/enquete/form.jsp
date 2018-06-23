@@ -52,6 +52,7 @@
 						</div>
 						<div class="card-body">
 							<form:form method="post" action="${url}" modelAttribute="enquete">
+								<form:hidden path="id"/>
 								<div class="form-group">
 									<label>T�tulo</label>
 									<form:input type="text" path="titulo" class="form-control"
