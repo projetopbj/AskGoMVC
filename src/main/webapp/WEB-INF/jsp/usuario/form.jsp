@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -31,11 +32,11 @@
 		</button>
 		<div class="collapse navbar-collapse text-center justify-content-end"
 			id="navbar2SupportedContent">
-			<a class="btn navbar-btn ml-2 text-white btn-secondary" href="/AskGO/enquete/listar">Enquetes<br>
-			</a>
-			<a class="btn navbar-btn ml-2 text-white btn-secondary" href="/AskGO/usuario/listar">Usuários<br>
-			</a>
-			<a class="btn navbar-btn ml-2 text-white btn-secondary"> <i
+			<a class="btn navbar-btn ml-2 text-white btn-secondary"
+				href="/AskGO/enquete/listar">Enquetes<br>
+			</a> <a class="btn navbar-btn ml-2 text-white btn-secondary"
+				href="/AskGO/usuario/listar">Usuários<br>
+			</a> <a class="btn navbar-btn ml-2 text-white btn-secondary"> <i
 				class="fa d-inline fa-lg fa-user-circle-o"></i>&nbsp;&nbsp;Perfil <br>
 			</a>
 		</div>
@@ -44,27 +45,34 @@
 	<div class="py-5">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-3"></div>
-				<div class="col-md-6">
-					<div class="card text-white p-5 bg-primary">
+				<div class="col-md-12">
+					<div class="card">
+						<div class="card-header bg-primary">
+							Cadastrar Usuário<br>
+						</div>
 						<div class="card-body">
-							<h1 class="mb-4">Cadastrar Usuário</h1>
 							<form:form method="post" action="${url}" modelAttribute="usuario">
-								<form:hidden path="id" />
-								<div class="form-group">
-									<label>Nome</label> 
-									<form:input type="text" path="nome" class="form-control" id="inlineFormInput" placeholder="Seu nome"/>
+								<div class="form-group form-row">
+									<label class="col-sm-2 col-form-label">Nome</label>
+									<div class="col-sm-10">
+										<form:input type="text" path="nome" class="form-control"
+											id="inlineFormInput" placeholder="Seu nome" />
+									</div>
 								</div>
-								<div class="form-group">
-									<label>Email</label>
-									<form:input path="email" type="email" class="form-control"
-										placeholder="Seu email" />
+								<div class="form-group form-row">
+									<label class="col-sm-2 col-form-label">Email</label>
+									<div class="col-sm-10">
+										<form:input path="email" type="email" class="form-control"
+											placeholder="Seu email" />
+									</div>
 								</div>
-								<div class="form-group">
-									<label>Senha</label>
-									<form:input path="senha" type="password" class="form-control"
-										placeholder="Senha" />
-									<form:errors path="senha" class="error" />
+								<div class="form-group form-row">
+									<label class="col-sm-2 col-form-label">Senha <br>
+									</label>
+									<div class="col-sm-10">
+										<form:input path="senha" type="password" class="form-control"
+											placeholder="Senha" />
+									</div>
 								</div>
 								<input type='submit' value='Salvar' cssClass="btn btn-secondary" />
 							</form:form>

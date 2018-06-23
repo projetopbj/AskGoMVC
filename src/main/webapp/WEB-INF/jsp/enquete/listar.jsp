@@ -63,7 +63,7 @@
           			<br>
           			<div class="card">
 		          			<c:url var="url" value="/enquete/form" />
-							<a class="btn btn-success" href="${url}">Adicionar Enquete</a>
+							<a class="btn btn-success" href="${url}">Cadastrar Enquete</a>
 					</div>
 					<br>
 					
@@ -80,7 +80,6 @@
 						<tbody>
 							<c:forEach var="enquete" items="${enquetes}">
 								<tr>
-									<td><i class="d-block  fa fa-2x fa-user-circle"></i></td>
 									<td class="w-75">${enquete.titulo}</td>
 									<td class="w-75">${enquete.descricao}</td>
 									<td class="btn-group"> <a
