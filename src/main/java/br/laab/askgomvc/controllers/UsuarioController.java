@@ -31,6 +31,13 @@ public class UsuarioController {
 		return "/usuario/listar";
 	}
 	
+	@RequestMapping(method=RequestMethod.GET, value="{id}/perfil")
+	public String perfil(@PathVariable Long id, ModelMap map){
+		Usuario user = usuarioService.buscarPorId(id);
+		map.addAttribute("usuario", user);
+		return "/usuario/perfil";
+	}
+	
 	@RequestMapping(value="filtrar", method=RequestMethod.GET)
 	public String filtrar(@ModelAttribute("filtro") Usuario filtro, ModelMap map){
 		
@@ -39,6 +46,7 @@ public class UsuarioController {
 		map.addAttribute("filtro", filtro);
 		return "/usuario/listar";
 	}
+	
 	@RequestMapping(value="form", method=RequestMethod.GET)
 	public String createForm(ModelMap map){
 		Usuario user = new Usuario();
@@ -46,6 +54,7 @@ public class UsuarioController {
 		
 		return "usuario/form";
 	}
+
 	@RequestMapping(method=RequestMethod.POST, value="save")
 	public String save(@ModelAttribute("usuario") @Valid Usuario usuario,BindingResult result, ModelMap map ){
 		
