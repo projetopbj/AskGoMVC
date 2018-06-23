@@ -76,11 +76,11 @@ public class EnqueteController {
 				
 				Usuario user = (Usuario)request.getSession().getAttribute("usuario");
 				List<Usuario> users = new ArrayList<>();
-				users.add(user);
+				//users.add(user);
 				if(user.getId() != null) 
 				{
 					enquete.setCriadorEnquete(user);
-					enquete.setEnqueteUsuarios(users);
+					//enquete.setEnqueteUsuarios(users);
 					
 				}
 			}catch (Exception e) {
