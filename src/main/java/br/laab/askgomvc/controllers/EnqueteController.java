@@ -47,13 +47,13 @@ public class EnqueteController {
 		return "enquete/form";
 	}
 	@RequestMapping(method=RequestMethod.POST, value="save")
-	public String save(@ModelAttribute("enquete") @Valid Enquete enquete,BindingResult result, ModelMap map ){
+	public String save(@ModelAttribute("enquete") Enquete enquete,BindingResult result, ModelMap map ){
 		
-		if(result.hasErrors()){
+		/*if(result.hasErrors()){
 			map.addAttribute("enquete", enquete);
 			return "enquete/form";
 			
-		}
+		}*/
 		if(enquete.getId() != null){
 			enqueteService.atualizar(enquete);
 		}
