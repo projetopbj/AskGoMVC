@@ -34,7 +34,7 @@
 			id="navbar2SupportedContent">
 			<a class="btn navbar-btn ml-2 text-white btn-secondary" href="/AskGO/enquete/listar">Enquetes<br>
 			</a>
-			<a class="btn navbar-btn ml-2 text-white btn-secondary" href="/AskGO/usuario/listar">Usuários<br>
+			<a class="btn navbar-btn ml-2 text-white btn-secondary" href="/AskGO/usuario/listar">Usuï¿½rios<br>
 			</a>
 			<a class="btn navbar-btn ml-2 text-white btn-secondary"> <i
 				class="fa d-inline fa-lg fa-user-circle-o"></i>&nbsp;&nbsp;Perfil <br>
@@ -53,29 +53,29 @@
 						<div class="card-body">
 							<form:form method="post" action="${url}" modelAttribute="enquete">
 								<div class="form-group">
-									<label>Título</label>
+									<label>Tï¿½tulo</label>
 									<form:input type="text" path="titulo" class="form-control"
-										id="inlineFormInput" placeholder="Título da Enquete" />
+										id="inlineFormInput" placeholder="Tï¿½tulo da Enquete" />
 								</div>
 								<div class="form-group">
-									<label for="exampleInputEmail1">Descrição</label>
+									<label for="exampleInputEmail1">Descriï¿½ï¿½o</label>
 									<form:textarea type="text" path="descricao" class="form-control"
-										id="inlineFormInput" placeholder="Descrição da Enquete" />
+										id="inlineFormInput" placeholder="Descriï¿½ï¿½o da Enquete" />
 								</div>
 								<div class="form-group">
-									<label>Data Limite para Votação</label> 
+									<label>Data Limite para Votaï¿½ï¿½o</label> 
 									<form:input type="date" path="dataFim" class="form-control"
-										id="inlineFormInput" placeholder="Data final de votação para Enquete" />
+										id="inlineFormInput" placeholder="Data final de votaï¿½ï¿½o para Enquete" />
 								</div>
 								<div class="form-group form-row my-3">
-									<label class="col-sm-2 col-form-label">Opção&nbsp;</label>
+									<label class="col-sm-2 col-form-label">Opï¿½ï¿½o&nbsp;</label>
 									<div class="col-sm-10">
 										<input type="text" class="form-control" id="inlineFormInput"
-											placeholder="Opção da enquete">
+											placeholder="Opï¿½ï¿½o da enquete">
 									</div>
 								</div>
 								<a href="#" class="btn btn-outline-primary btn-block">Adicionar
-									outra opção <br>
+									outra opï¿½ï¿½o <br>
 								</a>
 								<br>
 								<input type='submit' value='Salvar' cssClass="btn btn-secondary" />

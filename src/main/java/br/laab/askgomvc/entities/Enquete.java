@@ -20,6 +20,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 @Entity
 @Table(name = "enquete")
@@ -33,10 +34,10 @@ public class Enquete{
 	private String titulo;
 	private String descricao;
 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern="dd/MM/yyyy")
+	@DateTimeFormat(iso=ISO.DATE)
 	private Date dataInicio;
 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern="dd/MM/yyyy")
+	@DateTimeFormat(iso=ISO.DATE)
 	private Date dataFim;
 	private boolean estado;
 	
