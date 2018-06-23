@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,6 +13,11 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
 import org.hibernate.validator.constraints.NotEmpty;
+
+@Embeddable
+enum NivelAcesso {
+	admin, comum
+}
 
 @Entity
 public class Usuario{
@@ -27,6 +34,15 @@ public class Usuario{
 	private String email;
 	private String senha;
 	
+	@Embedded
+	private NivelAcesso nivelAcesso;
+	
+	public NivelAcesso getNivelAcesso() {
+		return nivelAcesso;
+	}
+	public void setNivelAcesso(NivelAcesso nivelAcesso) {
+		this.nivelAcesso = nivelAcesso;
+	}
 	@ManyToMany(mappedBy = "enqueteUsuarios")
 	private List<Enquete> enquetes = new ArrayList<>();
 	

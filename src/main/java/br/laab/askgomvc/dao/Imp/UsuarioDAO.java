@@ -29,7 +29,7 @@ public class UsuarioDAO extends DAO<Usuario, Long> implements IUsuarioDAO {
 			filtro.setNome("");
 		}
 		if(filtro.getEmail() != null){
-			str+=" and c.email = :email";
+			str+=" or c.email = :email";
 		}
 		Query query=manager.createQuery(str);   
 		
