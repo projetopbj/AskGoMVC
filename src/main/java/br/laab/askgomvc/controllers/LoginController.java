@@ -39,7 +39,7 @@ public class LoginController {
 			map.addAttribute("usuario", usuario);
 			return  "login/login";
 		}
-		sessao.setAttribute("usuario", usuario);
+		sessao.setAttribute("usuario", usuarioBD);
 		return "redirect:/usuario/form";
 	}
 	

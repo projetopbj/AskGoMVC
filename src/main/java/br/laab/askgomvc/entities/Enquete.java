@@ -19,6 +19,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name = "enquete")
 public class Enquete{
@@ -31,8 +33,10 @@ public class Enquete{
 	private String titulo;
 	private String descricao;
 	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern="dd/MM/yyyy")
 	private Date dataInicio;
 	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern="dd/MM/yyyy")
 	private Date dataFim;
 	private boolean estado;
 	

@@ -8,7 +8,6 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.laab.askgomvc.dao.IEnqueteDAO;
-import br.laab.askgomvc.dao.Imp.EnqueteDAO;
 import br.laab.askgomvc.entities.Enquete;
 
 @Service
@@ -17,6 +16,7 @@ public class EnqueteService {
 	
 	@Autowired
 	private IEnqueteDAO enqueteDAO;
+
 
 	public void inserir(Enquete enquete) {
 		enqueteDAO.insert(enquete);
